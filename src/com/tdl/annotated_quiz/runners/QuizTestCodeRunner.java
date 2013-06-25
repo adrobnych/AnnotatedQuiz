@@ -19,7 +19,7 @@ public class QuizTestCodeRunner {
 		for (Method m : test.getClass().getDeclaredMethods()) {
 			if (m.isAnnotationPresent(Code.class)) {
 				try {
-					result = "" + m.invoke(null);
+					result = "" + m.invoke(test, (Object[])null);
 				} catch (InvocationTargetException wrappedExc) {
 					Throwable exc = wrappedExc.getCause();
 					System.out.println(m + " failed: " + exc);
@@ -31,8 +31,9 @@ public class QuizTestCodeRunner {
 		return result;
 	}
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+		Class<?> testClass = Class.forName(args[0]);
+		QuizTestCodeRunner runner = new QuizTestCodeRunner( (QuizTest) testClass.newInstance() );
+		System.out.println(runner.start());
 	}
 }

@@ -6,12 +6,12 @@ import com.tdl.annotated_quiz.annotations.Question;
 public class SimpleMath extends QuizTest{
 	
 	@Question
-	public static String printQuestion(){
+	public String printQuestion(){
 		return "What will be the result of this expression?";
 	}
 	
 	@Code
-	public static String run(){
+	public String run(){
 		int result =  1+1;
 		return "" + result; 
 	}
