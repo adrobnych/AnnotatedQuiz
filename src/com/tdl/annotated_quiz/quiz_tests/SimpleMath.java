@@ -12,7 +12,7 @@ public class SimpleMath extends QuizTest{
 	
 	@Code
 	public String howMuchIsOnePlusOne(){
-		int result =  1+1;
+		int result = 1+1;
 		return "" + result; 
 	}
 

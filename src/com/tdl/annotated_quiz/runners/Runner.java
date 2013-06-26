@@ -7,7 +7,7 @@ import java.lang.reflect.Method;
 import com.tdl.annotated_quiz.quiz_tests.QuizTest;
 
 public abstract class Runner {
-	private QuizTest test;
+	protected QuizTest test;
 	
 	public Runner(QuizTest test) {
 		this.test = test;

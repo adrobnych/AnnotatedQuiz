@@ -18,7 +18,8 @@ public class QuizTestPrinterSpec {
 	@Test
 	public void itShouldPrintQuestionOfSingleTest() {
 		String result = runner.start();
-		assertEquals("What will be the result of this expression?", result);
+		assertTrue(result + " DOESN'T CONTAIN EXPECTED SUBSTRING",
+			result.contains("What will be the result of this expression?"));
 	}
 	
 	@Test
