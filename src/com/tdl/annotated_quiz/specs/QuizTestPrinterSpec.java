@@ -1,6 +1,6 @@
 package com.tdl.annotated_quiz.specs;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
@@ -12,12 +12,19 @@ import com.tdl.annotated_quiz.runners.Runner;
 
 public class QuizTestPrinterSpec {
 
+	QuizTest test = new SimpleMath();
+	Runner runner = new QuizTestPrinter(test);
+	
 	@Test
 	public void itShouldPrintQuestionOfSingleTest() {
-		QuizTest test = new SimpleMath();
-		Runner runner = new QuizTestPrinter(test);
 		String result = runner.start();
 		assertEquals("What will be the result of this expression?", result);
+	}
+	
+	@Test
+	public void itShouldPrintCodeOfSingleTest(){
+		String result = runner.start();
+		assertTrue(result + " DOESN'T CONTAIN EXPECTED SUBSTRING", result.contains("int result = 1+1;"));
 	}
 
 }

@@ -1,10 +1,6 @@
 package com.tdl.annotated_quiz.runners;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
 import com.tdl.annotated_quiz.annotations.Code;
-import com.tdl.annotated_quiz.annotations.Question;
 import com.tdl.annotated_quiz.quiz_tests.QuizTest;
 
 public class QuizTestCodeRunner extends Runner{
