@@ -24,7 +24,8 @@ public class QuizTestPrinterSpec {
 	@Test
 	public void itShouldPrintCodeOfSingleTest(){
 		String result = runner.start();
-		assertTrue(result + " DOESN'T CONTAIN EXPECTED SUBSTRING", result.contains("int result = 1+1;"));
+		assertTrue(result + " DOESN'T CONTAIN EXPECTED SUBSTRING",
+			result.contains("int result = 1+1;"));
 	}
 
 }
